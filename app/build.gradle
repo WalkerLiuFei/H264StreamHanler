@@ -1,0 +1,69 @@
+apply plugin: 'com.android.model.application'
+
+model {
+    android {
+        compileSdkVersion 23
+        buildToolsVersion "23.0.3"
+
+        defaultConfig.with {
+            applicationId "liufei.person.ffmpegproject"
+            minSdkVersion.apiLevel = 15
+            targetSdkVersion.apiLevel = 23
+        }
+    }
+    android.ndk {
+        moduleName = "MyLibrary"
+        ldLibs.addAll(['android', 'log'])
+    }
+
+    repositories {
+        MyLibrary(PrebuiltLibraries) {
+
+            ffmpeg {
+                binaries.withType(SharedLibraryBinary) {
+                    sharedLibraryFile = file("src/main/jni/libffmpeg.so");
+                }
+            }
+        }
+    }
+    android.productFlavors {
+        create("arm") {
+            ndk.abiFilters.add("armeabi")
+        }
+        create("arm7") {
+            ndk.abiFilters.add("armeabi-v7a")
+        }
+        // To include all cpu architectures, leaves abiFilters emptycreate("all")
+    }
+    android.sources {
+        main {
+            jni {
+                exportedHeaders  {
+                    srcDir "src/main/jni/include"
+                }
+                dependencies{
+                    library "ffmpeg"
+
+                }
+            }
+        }
+    }
+    android.buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles.add(file('proguard-rules.txt'))
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:cardview-v7:23.+'
+    compile 'com.android.support:design:23.2.1'
+    compile 'org.mp4parser:muxer:1.9.27'
+}
+
+

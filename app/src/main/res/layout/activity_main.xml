@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <walker.person.mediahandlerlib.DisplayView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/videoPlayView"
+        android:layout_width="1280px"
+        android:layout_height="720px"
+        tools:context="liufei.person.walker.person.mediahandlerlib.MainActivity"/>
+
+    <walker.person.mediahandlerlib.DisplayView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/videoPlayView2"
+        android:layout_below="@+id/videoPlayView"
+        android:layout_width="1280px"
+        android:layout_height="720px"
+        tools:context="liufei.person.walker.person.mediahandlerlib.MainActivity">
+
+    </walker.person.mediahandlerlib.DisplayView>
+    <android.support.v7.widget.CardView
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:onClick="changeStatus"
+        app:cardBackgroundColor = "#f52" >
+        <TextView
+            android:id="@+id/tv_playing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="停止"
+            android:textColor="#28E"
+            />
+        </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:onClick="changeStatus"
+        app:cardBackgroundColor = "#f52" >
+        <TextView
+            android:id="@+id/tv_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="录像"
+            android:textColor="#28E"
+            />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginLeft="50dp"
+        android:onClick="changeStatus"
+        app:cardBackgroundColor = "#f52" >
+        <TextView
+            android:id="@+id/tv_play_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="播放"
+            android:textColor="#28E"
+            />
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
