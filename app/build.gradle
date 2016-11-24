@@ -38,15 +38,15 @@ model {
     android.sources {
         main {
             jni {
-                exportedHeaders  {
+                exportedHeaders {
                     srcDir "src/main/jni/include"
                 }
-                dependencies{
+                dependencies {
                     library "ffmpeg"
-
                 }
             }
-        }
+            //assets.srcDirs = ['src/main/assets', 'src/main/assets/']
+    }
     }
     android.buildTypes {
         release {
@@ -54,7 +54,6 @@ model {
             proguardFiles.add(file('proguard-rules.txt'))
         }
     }
-
 }
 
 dependencies {
@@ -65,5 +64,3 @@ dependencies {
     compile 'com.android.support:design:23.2.1'
     compile 'org.mp4parser:muxer:1.9.27'
 }
-
-

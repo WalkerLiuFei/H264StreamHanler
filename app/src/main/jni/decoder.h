@@ -1,8 +1,0 @@
-//
-// Created by Administrator on 2016/11/18 0018.
-//
-
-#ifndef MEDIAHANDLERLIB_DECODER_H
-#define MEDIAHANDLERLIB_DECODER_H
-
-#endif //MEDIAHANDLERLIB_DECODER_H

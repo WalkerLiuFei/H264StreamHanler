@@ -4,7 +4,10 @@
 
 #include "utils.h"
 #include "jni.h"
+#include "libavcodec/avcodec.h"
+
 #define MIRROR_DATA "mirrorData"
+
 
 jfieldID getMirrorDataFiledId(JNIEnv *env, jobject jobject1){
     jclass cls = (*env)->GetObjectClass(env,jobject1);
